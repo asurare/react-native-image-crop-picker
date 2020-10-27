@@ -885,6 +885,8 @@ RCT_EXPORT_METHOD(openCropper:(NSDictionary *)options
     
     cropVC.doneButtonTitle = [self.options objectForKey:@"cropperChooseText"];
     cropVC.cancelButtonTitle = [self.options objectForKey:@"cropperCancelText"];
+    cropVC.cancelButtonHidden = true;
+    cropVC.doneButtonHidden = true;
     
     cropVC.modalPresentationStyle = UIModalPresentationFullScreen;
     
