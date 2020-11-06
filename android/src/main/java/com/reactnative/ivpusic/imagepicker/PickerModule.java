@@ -92,6 +92,7 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
     private String cropperToolbarTitle = null;
     private String cropperToolbarWidgetColor = null;
     private String cropperBackgroundColor = null;
+    private String cropperFrameColor = null;
 
     private int width = 0;
     private int height = 0;
@@ -134,6 +135,7 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
         cropperToolbarTitle = options.hasKey("cropperToolbarTitle") ? options.getString("cropperToolbarTitle") : null;
         cropperToolbarWidgetColor = options.hasKey("cropperToolbarWidgetColor") ? options.getString("cropperToolbarWidgetColor") : null;
         cropperBackgroundColor = options.hasKey("cropperBackgroundColor") ? options.getString("cropperBackgroundColor") : null;
+        cropperFrameColor = options.hasKey("cropperFrameColor") ? options.getString("cropperFrameColor") : null;
         cropperCircleOverlay = options.hasKey("cropperCircleOverlay") && options.getBoolean("cropperCircleOverlay");
         freeStyleCropEnabled = options.hasKey("freeStyleCropEnabled") && options.getBoolean("freeStyleCropEnabled");
         showCropGuidelines = !options.hasKey("showCropGuidelines") || options.getBoolean("showCropGuidelines");
@@ -651,6 +653,10 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
         if (cropperBackgroundColor != null){
             options.setDimmedLayerColor(Color.parseColor(cropperBackgroundColor));
             options.setRootViewBackgroundColor(Color.parseColor(cropperBackgroundColor));
+        }
+
+        if (cropperFrameColor != null){
+            options.setCropFrameColor(Color.parseColor(cropperFrameColor));
         }
     }
 
