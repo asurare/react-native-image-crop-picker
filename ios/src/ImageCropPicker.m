@@ -931,7 +931,11 @@ RCT_EXPORT_METHOD(openCropper:(NSDictionary *)options
             blue  = [self colorComponentFrom: colorString start: 6 length: 2];
             break;
         default:
-            [NSException raise:@"Invalid color value" format: @"Color value %@ is invalid.  It should be a hex value of the form #RBG, #ARGB, #RRGGBB, or #AARRGGBB", hexString];
+            alpha = 1.0f;
+            red   = 1.0f;
+            green = 1.0f;
+            blue  = 1.0f;
+            //[NSException raise:@"Invalid color value" format: @"Color value %@ is invalid.  It should be a hex value of the form #RBG, #ARGB, #RRGGBB, or #AARRGGBB", hexString];
             break;
     }
     return [UIColor colorWithRed: red green: green blue: blue alpha: alpha];
